@@ -1,0 +1,220 @@
+/* PostYourProperty Content Starts here  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,600;1,300;1,400;1,500;1,700;1,900&family=Supermercado+One&display=swap');
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+/* form css starts here */
+.postform_container {
+    min-height: 100vh;
+    background-color: #B2B2B2;
+}
+
+.form-body {
+
+    background: #B2B2B2;
+    /* height: 92vh; */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    /* box-shadow: 20px 20px 60px #bebebe,
+        -20px -20px 60px #ffffff; */
+
+
+}
+
+
+
+
+
+.initial-container {
+    /* height: 80vh; */
+
+    width: 50vw;
+    background-size: 400% 400%;
+
+    padding: 4vh;
+    margin-top: 20px;
+    color: rgb(0, 0, 0);
+    /* border-radius: 21px; */
+    background: #EAEAEA;
+    /* border: 2px solid white; */
+    border-radius: 20px;
+    box-shadow: inset 20px 20px 60px #bebebe,
+        inset -20px -20px 60px #ffffff;
+
+}
+
+.form_element_box {
+    margin: 10px 10px;
+    margin-bottom: 14px;
+    padding: 10px 20px;
+    box-shadow: rgba(255, 255, 255, 0.05) 0px 0px 0px 1px;
+
+    font-family: 'Barlow', sans-serif;
+    font-size: 30px;
+    border: 1px solid #EAEAEA;
+    background-color: #EAEAEA;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+}
+
+.form-control.textbox {
+    width: 100%;
+}
+
+.form-select.selectbox.textbox {
+    width: 100%;
+}
+
+.italic_font {
+    font-family: 'Barlow', sans-serif;
+    font-family: 'Indie Flower', cursive;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Josefin Slab', serif;
+    font-family: 'Lexend Peta', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Square Peg', cursive;
+    font-size: 25px;
+}
+
+.small_font {
+    font-size: 18px;
+    font-family: 'Barlow', sans-serif;
+}
+
+.textbox {
+    padding: 4px;
+    background: white;
+    background-size: 400% 400%;
+
+    color: #000000;
+    font-size: 15px;
+    width: 49vw;
+
+}
+
+.transparent_bg {
+    margin: 2px 0px;
+    padding: 5px;
+    box-shadow: rgba(255, 255, 255, 0.05) 0px 0px 0px 1px;
+    font-family: 'Barlow', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Josefin Slab', serif;
+    font-family: 'Lexend Peta', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    border: 3px solid black;
+    border-radius: 2px;
+    color: rgb(0, 0, 0);
+}
+
+.radio_color {
+    background: #ffffff;
+    background-size: 400% 400%;
+
+}
+
+
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .description {
+        text-align: center;
+        padding: 30px;
+        font-size: 20px;
+        margin: auto;
+    }
+
+    .search_container {
+        display: none;
+    }
+
+    .search_header {
+        height: 40vh;
+    }
+
+    .searchresponsive {
+        display: block;
+        width: 100%;
+        padding: 8px;
+    }
+
+    .search {
+        margin-right: 5px;
+        border: 1px solid #F6F6F6;
+        border-radius: 2px;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .search_container {
+        display: none;
+    }
+
+    .search_header {
+        height: 40vh;
+    }
+
+    .searchresponsive {
+        display: block;
+        width: 100%;
+        padding: 8px;
+    }
+
+    .search {
+        margin-right: 5px;
+        border: 1px solid #F6F6F6;
+        border-radius: 2px;
+    }
+
+}
+
+.form-container {
+    background-color: #ffffff;
+    /* border: 1px solid black; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 30px 30px;
+    padding: 20px;
+    color: rgb(0, 0, 0);
+}
+
+.form-section-container {
+    margin: 20px;
+    /* border: 1px solid rgb(0, 0, 0); */
+    padding: 10px;
+    /* box-shadow:5px 5px 5px #969090; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.textbox {
+    width: 30vw;
+    background-color: #ffffff;
+    color: #000000;
+
+}
+
+.selectbox {
+    width: 30vw;
+}
+
+
+/* form css ends here */

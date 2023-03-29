@@ -1,0 +1,354 @@
+/* Navbar css start */
+
+
+
+.Navbar_container_A {
+    margin: 0px;
+    height: 10vh;
+    background-color: #181818;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-bottom: 2px solid #D1D4C9; */
+
+}
+
+
+
+.Navbar_li {
+    display: inline;
+    list-style-type: None;
+}
+
+.Navbar_link {
+    text-decoration: None;
+    color: #D1D4C9;
+    font-size: 25px;
+    font-family: 'Barlow', sans-serif;
+    /* border: 1px solid black;
+    padding: 20px; */
+}
+
+.Navbar_link_button {
+    color: #D1D4C9;
+    padding: 10px;
+    margin-top: 15px;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: transparent;
+    border: none;
+    /* border-left: 1px solid white;
+    border-top: 1px solid white;
+    border-right: 1px solid white; */
+
+
+}
+
+.Navbar_link_button:hover {
+    color: #325288;
+    transform: scale(1.1);
+}
+
+
+.Navbar_link_button:after {
+    display: block;
+    content: '';
+    border-bottom: solid 2px #325288;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+}
+
+.Navbar_link_button:hover:after {
+    transform: scaleX(1);
+    transform-origin: 0% 50%;
+}
+
+.admin_logo_messed_up {
+    color: #2FA4FF;
+    text-align: center;
+    font-size: 30px;
+    margin: auto 0px 4px;
+    /* border-bottom: 1px solid #D1D4C9; */
+}
+
+.logo_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.logo_image {
+    height: 50px;
+    width: 80px;
+    margin-right: 10px;
+}
+
+
+.new_logo {
+    height: 8vh;
+    width: 4vw;
+
+}
+
+
+
+
+/* Navbar css end */
+
+/* Admin_portal_Container starts */
+
+.Admin_portal_container {
+    /* margin: 0px 30px;
+    margin-top: 30px; */
+    height: 40vh;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 10px solid #483434; */
+
+}
+
+
+.new_Admin_portal_container {
+    height: 40vh;
+}
+
+
+
+
+.Admin_portal_container {
+    position: relative;
+}
+
+.admin_card_image {
+    /* font-size: 20px; */
+    height: 80px;
+    width: 80px;
+
+}
+
+.Admin_portal_container h2 {
+
+    color: #EBE645;
+    font-size: 15vh;
+    position: absolute;
+    /* transform: translate(-50%, -50%); */
+}
+
+.Admin_portal_container h2:nth-child(1) {
+    color: transparent;
+    -webkit-text-stroke: 2px #D1D4C9;
+}
+
+.Admin_portal_container h2:nth-child(2) {
+    color: #D1D4C9;
+    animation: animate 4s ease-in-out infinite;
+
+}
+
+
+
+@keyframes animate {
+
+    0%,
+    100% {
+        clip-path: polygon(0% 45%,
+                16% 44%,
+                33% 50%,
+                54% 60%,
+                70% 61%,
+                84% 59%,
+                100% 52%,
+                100% 100%,
+                0% 100%);
+    }
+
+    50% {
+        clip-path: polygon(0% 60%,
+                15% 65%,
+                34% 66%,
+                51% 62%,
+                67% 50%,
+                84% 45%,
+                100% 46%,
+                100% 100%,
+                0% 100%);
+    }
+}
+
+
+.admin_card_container {
+
+    height: 50vh;
+    margin-bottom: 0px;
+    /* margin-top: 30px; */
+    background-color: #222831;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.admin_card {
+    height: 30vh;
+    background-color: #D1D4C9;
+    width: 40vh;
+    margin: 0px 20px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    text-align: center;
+    font-family: 'Barlow', sans-serif;
+    color: #1C0C5B;
+    /* border: 1px solid white; */
+
+
+}
+
+.admin_card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgb(0, 0, 0), 0 4px 8px rgba(0, 0, 0, .06);
+
+}
+
+.admin_minicard {
+    height: 15vh;
+    width: 40vh;
+    background-color: #23374D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 2px solid #23374D;
+    border-radius: none;
+    /* border-top-left-radius: 10px; */
+    /* border-top-right-radius: 10px; */
+    margin-bottom: 5px;
+    /* font-size: 20px; */
+}
+
+
+
+.admin_minicard2 {
+    height: 10vh;
+    background-color: #23374D;
+    color: #D1D4C9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #23374D;
+    border-radius: none;
+    /* border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px; */
+    margin-top: 5px;
+}
+
+/* Admin_portal_Container end */
+
+
+/* AdminUserTableContainer starts here */
+
+.AdminUserTableContainer {
+    height: 7vh;
+    background-color: #222831;
+    border-radius: 5px;
+    margin: 0px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+
+}
+
+
+/* AdminUserTableContainer ends here */
+
+/* AdminPropertyTableContainer starts here */
+
+.AdminPropertyTableContainer {
+    height: 7vh;
+    background-color: #222831;
+    border-radius: 5px;
+    margin: 0px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+
+}
+
+
+/* AdminPropertyTableContainer ends here */
+
+/* AdminContactUsTableContainer starts here */
+
+.AdminContactUsTableContainer {
+    height: 7vh;
+    background-color: #222831;
+    border-radius: 5px;
+    margin: 0px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+
+}
+
+
+/* AdminContactUsTableContainer ends here */
+
+
+
+
+
+
+
+.bg {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, rgb(124, 130, 121) 50%, #23374D 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: .5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+
+.bg3 {
+    animation-duration: 5s;
+}
+
+.content {
+    background-color: rgba(255, 255, 255, .8);
+    border-radius: .25em;
+    box-shadow: 0 0 .25em rgba(0, 0, 0, .25);
+    height: 20vh;
+    /* box-sizing: border-box; */
+    left: 50%;
+    padding: 20px 60px;
+    position: fixed;
+    text-align: center;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+
+}
+
+
+
+.Admin_portal_text {
+    font-size: 80px;
+    font-family: monospace;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(25%);
+    }
+}

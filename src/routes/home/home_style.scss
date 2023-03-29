@@ -1,0 +1,179 @@
+$c1: #1C1427;
+$c2: lighten($c1, 40);
+$c3: lighten($c2, 40);
+$time: 6s;
+
+/*  lazy placement and background for demo */
+
+.anim {
+    background-color: $c1;
+    height: 80vh;
+    width: 100vw;
+    overflow: hidden;
+    background-image: radial-gradient(circle, $c1, darken($c1, 10));
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+svg {
+    width: 66vw;
+    height: 44vh;
+    margin-left: 16.666vw;
+    margin-top: 9.666vh;
+}
+
+/*main-logo*/
+.ha-logo {
+
+    path,
+    circle {
+        fill: none;
+        stroke: $c2;
+        stroke-width: 0.125px;
+        stroke-linejoin: round;
+
+        &.house {
+            stroke-linecap: round;
+            stroke-width: .3px;
+        }
+    }
+}
+
+.loading.ha-logo circle {
+    animation: nodes $time linear infinite;
+}
+
+.loading.ha-logo .house {
+    animation: house $time ease infinite;
+}
+
+.loading.ha-logo .circut {
+    animation: circut $time cubic-bezier(.7, .1, .1, .9) infinite;
+}
+
+
+@keyframes house {
+    0% {
+        stroke-dashoffset: -50;
+        stroke-dasharray: 50 50
+    }
+
+    45% {
+        stroke-dashoffset: -100
+    }
+
+    50% {
+        stroke: $c2
+    }
+
+    60% {
+        stroke: $c3
+    }
+
+    75% {
+        stroke: $c2
+    }
+
+    80% {
+        stroke-dashoffset: -100
+    }
+
+    100% {
+        stroke-dashoffset: -130;
+        stroke-dasharray: 50 50
+    }
+}
+
+@keyframes circut {
+    0% {
+        stroke-dasharray: 20 20;
+        stroke-dashoffset: -20
+    }
+
+    13% {
+        stroke-dashoffset: -20
+    }
+
+    50% {
+        stroke-dashoffset: -40;
+        stroke: $c2;
+    }
+
+    60% {
+        stroke: $c3;
+    }
+
+    70% {
+        stroke: $c2;
+    }
+
+    85% {
+        stroke-dashoffset: -40;
+    }
+
+    100% {
+        stroke-dashoffset: -60;
+        stroke-dasharray: 20 20
+    }
+}
+
+@keyframes nodes {
+    0% {
+        stroke-dasharray: 0 4
+    }
+
+    25% {
+        stroke-dasharray: 0 4
+    }
+
+    35% {
+        stroke-dasharray: 4 0;
+        stroke: $c2
+    }
+
+    41% {
+        fill: none;
+    }
+
+    42% {
+        fill: $c2;
+    }
+
+    55% {
+        fill: none;
+        stroke: $c2;
+    }
+
+    65% {
+        fill: $c3;
+        stroke: $c3;
+    }
+
+    75% {
+        stroke: $c2;
+        fill: none;
+        stroke-dasharray: 4 0;
+    }
+
+    85% {
+        fill: $c2;
+        stroke: $c2;
+    }
+
+    93% {
+        fill: none;
+        stroke-dasharray: 4 0;
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dashoffset: -4;
+        stroke-dasharray: 0 4;
+    }
+}
+
+@for $i from 1 to 15 {
+    .ha-logo circle:nth-child(#{$i}n) {
+        animation-delay: $i * -($time * 0.009);
+    }
+}

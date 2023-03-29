@@ -1,0 +1,135 @@
+.search_container {
+    width: 80vw;
+    height: 28vh;
+    border: 1px solid white;
+    border-radius: 2vh;
+    align-self: center;
+    margin-bottom: 0px;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background: #d7d0e0;
+    box-shadow: 6px 6px 12px #40394A,
+        -6px -6px 12px #5c5c5a;
+    position: absolute;
+    top: 78vh;
+    left: 10vw;
+}
+
+.description {
+    background: transparent;
+    font-family: 'Josefin Slab', serif;
+    font-family: 'Lexend Peta', sans-serif;
+    ;
+    font-size: 30px;
+    color: #fdfdfd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.description-text {
+    color: #49FF00;
+    border-bottom: 1px solid #49FF00;
+
+}
+
+.container2 {
+    height: 10vh;
+}
+
+.searchbar {
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    text-align: center;
+
+}
+
+.searchbarbtn {
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1vh;
+
+}
+
+.location {
+    margin: 10px;
+    margin-right: 1vh;
+    border: 0px;
+    padding: 0px;
+    border-radius: 0px;
+    background-color: #3199d2;
+    color: #F6F6F6;
+    text-decoration: none;
+
+}
+
+.location_button_new {
+    border: none;
+    padding: 4px 180px;
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #777373;
+
+}
+
+.location_button_new:hover {
+    background-color: #777373;
+    padding: 8px 160px;
+
+    color: #fdfdfd;
+}
+
+.search {
+    margin-left: 1vh;
+
+    border: 0px;
+    border-radius: 0px;
+    background-color: #374045;
+    color: #F6F6F6;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.btn {
+    box-shadow: none !important;
+    margin: 10px;
+}
+
+.search:hover {
+    background-color: #777373;
+    color: #ffffff;
+}
+
+.search-text {
+    border-radius: 0px;
+    margin-top: 6px;
+}
+
+.categories {
+    border: 0;
+    background-color: #374045;
+}
+
+.categories:hover {
+
+    background-color: #777373;
+    color: #ffffff;
+}
+
+.categories:active {
+    background-color: #777373;
+    color: #ffffff;
+}
+
+.searchresponsive {
+    display: none;
+}

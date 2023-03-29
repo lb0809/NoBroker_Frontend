@@ -1,0 +1,14 @@
+.location2 {
+    padding: 4px;
+    background: whitesmoke;
+    background-size: 400% 400%;
+    font-size: 15px;
+    width: 49vw;
+    border-color: bisque;
+    border-radius: 100;
+
+}
+
+.notsosmall_font {
+    font-size: 12px;
+}

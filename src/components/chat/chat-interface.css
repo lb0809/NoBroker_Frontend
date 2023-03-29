@@ -1,0 +1,201 @@
+.input-class {
+    width: 100%;
+    padding: 7px 26px;
+    background: #ffffff;
+    font-size: 18px;
+    color: black;
+    border-radius: 14px;
+    border: none;
+    outline: none;
+}
+
+.BoxChat {
+    margin-top: 20px;
+    max-width: 55%;
+    margin: auto;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 10px 10px 20px #969696,
+        -10px -10px 20px #ffffff;
+
+}
+
+.BoxMassage {
+    padding: 4%;
+    overflow-y: scroll;
+    height: 270px;
+}
+
+.massage {
+    max-width: 43%;
+    padding: 1% 4%;
+    border-radius: 7.5px;
+    box-shadow: 0 1px 0.5px #0000001a;
+    margin: 17px 0;
+    font-family: sans-serif;
+    line-height: 24px;
+}
+
+.msgBot {
+    background: #d9fdd3;
+    margin-left: auto;
+    padding: 2% 4%;
+}
+
+.msgUser {
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 5px 5px 10px #bababa,
+        -5px -5px 10px #ffffff;
+}
+
+.send {
+    padding: 8px 30px;
+    cursor: pointer;
+    margin: auto 0;
+}
+
+.BoxSend {
+    display: flex;
+    background: #f0f2f5;
+    padding: 14px;
+}
+
+.send-btn {
+    border: none;
+    background: #87888b;
+    width: 2.5rem;
+    margin-left: 5px;
+    border-radius: 10px;
+    background: #87888b;
+    box-shadow: 5px 5px 10px #636365,
+        -5px -5px 10px #abadb1;
+}
+
+.BoxInfoUser {
+    display: flex;
+    background: #f0f2f5;
+    padding: 9px;
+}
+
+.Menu {
+    width: 70px;
+    padding: 10px 13px;
+    margin: auto 0;
+    margin-left: auto;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.Menu:hover {
+    animation: bg 2s;
+    background-color: #e1e1e1;
+}
+
+@keyframes bg {
+    35% {
+        background-color: #e1e1e144;
+    }
+
+    65% {
+        background-color: #e1e1e1a5;
+    }
+
+    100% {
+        background-color: #e1e1e1;
+    }
+}
+
+@keyframes color {
+    0% {
+        background: #33CCCC;
+    }
+
+    20% {
+        background: #33CC36;
+    }
+
+    40% {
+        background: #B8CC33;
+    }
+
+    60% {
+        background: #FCCA00;
+    }
+
+    80% {
+        background: #33CC36;
+    }
+
+    100% {
+        background: #33CCCC;
+    }
+}
+
+@keyframes shadow {
+    0% {
+        box-shadow: 0 0 4px #006a34b8;
+    }
+
+    20% {
+        box-shadow: 0 0 8px #006a34b8;
+    }
+
+    40% {
+        box-shadow: 0 0 12px #006a34b8;
+    }
+
+    60% {
+        box-shadow: 0 0 12px #006a34b8;
+    }
+
+    80% {
+        box-shadow: 0 0 8px #006a34b8;
+    }
+
+    100% {
+        box-shadow: 0 0 5px #006a34b8;
+    }
+}
+
+.ImageProfileBot {
+    width: 50px;
+    height: 50px;
+    margin: auto 0;
+    padding: 0 0 0 7px;
+}
+
+.NameBot {
+    padding: 0 14px;
+    font-size: 18px;
+    font-family: sans-serif;
+    margin: auto 0;
+}
+
+.Loader {
+    background: #87888b;
+    width: 20px;
+    height: 20px;
+    margin: 0 6px;
+    border-radius: 59px;
+    animation: shadow 9s infinite linear, color 9s infinite linear;
+}
+
+.BoxLoader {
+    margin: 12px auto;
+    display: flex;
+    width: 94px;
+    height: 20px;
+}
+
+.SendmsgNow {
+    background: white;
+    padding: 17px;
+    border-radius: 23px;
+    text-align: center;
+    width: 60%;
+    margin: 100px auto;
+    font-family: sans-serif;
+}

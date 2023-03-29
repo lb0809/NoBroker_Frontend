@@ -1,0 +1,94 @@
+/* contact page css */
+
+.contact-heading {
+    text-align: center;
+    margin: 3rem 1rem;
+  }
+  
+  .bg_section {
+    position: relative; 
+    overflow: hidden;
+    text-align: center;
+    padding: 60px 0 30px;
+  }
+  
+  .page-title {
+    color: #002aff;
+    font-family: Marcellus SC,serif;
+    font-size: 24px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: .01em;
+    font-weight: 700;
+    margin: 1.5em 0 0;
+  }
+  
+  .bg_img {
+    position: absolute;
+    left: 50%;
+    transform:translate3d(-50%, -270px, 0px); 
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    height: 500px;
+    width:100%;
+    filter: none;
+  }
+  
+  .content {
+    text-align: center;
+    position: relative;
+    margin-bottom: 60px;
+  }
+  
+  .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  .contact_info_item_iconimage {
+    height : 100px;
+    width : 100px;
+  }
+  
+  .contact-info {
+    margin: 0 0 0 20px;
+    align-items: center;
+    /* display: flex; */
+  }
+  
+  .contact_info_title {
+    color: #cabe9f;
+    text-transform: uppercase!important;
+    font-family: Montserrat,sans-serif;
+  }
+  
+  .contact_form_title {
+    color: #cabe9f;
+    font-size: 40px;
+    text-transform: uppercase!important;
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: Marcellus SC,serif;
+  }
+  
+  #textareaComment, #exampleInputName, #exampleInputEmail {
+    display: block;
+    border: 2px solid #cabe9f
+  }
+  
+  .submit_button {
+    background-color: #cabe9f;
+    font-weight: 700;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }

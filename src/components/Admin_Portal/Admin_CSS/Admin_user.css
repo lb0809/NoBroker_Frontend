@@ -1,0 +1,120 @@
+.Admin_user_table_container {
+    height: 100%;
+    background-color: #181818;
+    margin: 0px;
+}
+
+/* Search Bar Starts */
+
+.Search_bar {
+    height: 7vh;
+    width: 90%;
+    margin-left: 0.3%;
+    margin-top: 3px;
+    padding: 1em;
+    margin-bottom: 3px;
+    border-radius: 5px;
+}
+
+.Search_button {
+    height: 7vh;
+    width: 9%;
+    border-radius: 5px;
+    margin-left: 0.3%;
+    border: none;
+    margin-top: 3px;
+    background-color: #38E54D;
+    padding: 0px;
+    margin-bottom: 3px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+}
+
+.Search_button:hover {
+    background-color: #9CFF2E;
+}
+
+/* Search bar ends */
+
+
+
+.pagination_container {
+    margin: 0px;
+}
+
+.pagination_button {
+
+
+    margin: 7px 0px;
+    margin-left: 42vw;
+    height: 5vh;
+    padding: 0.5em;
+    color: #FFFDE1;
+    background-color: #325288;
+    font-family: 'Barlow', sans-serif;
+
+
+}
+
+.pagination_button:hover {
+    background-color: #38E54D;
+    color: #000000;
+}
+
+
+
+
+.pagination_button_previous {
+    width: 5vw;
+    text-align: center;
+    background-color: #222831 !important;
+    color: #D1D4C9 !important;
+    border: none !important;
+}
+
+.pagination_button_numeric {
+    background-color: #222831 !important;
+    width: 2vw;
+    text-align: center;
+    border: none !important;
+}
+
+.pagination_button_next {
+    background-color: #222831 !important;
+    text-align: center;
+    width: 5vw;
+    border: none !important;
+}
+
+.pagination_button_numeric_active {
+    background-color: #FF6464 !important;
+}
+
+
+
+.user_table_row {
+    padding: 0px;
+    border: 0px;
+}
+
+
+
+.p_class {
+    margin: 12px;
+    padding: 3px;
+    text-align: center;
+    /* border-left: 1px solid white; */
+    font-family: 'Barlow', sans-serif;
+
+    color: aliceblue;
+}
+
+.main_row_header {
+    font-size: 22px;
+    color: #D1D4C9;
+}
+
+.trash_css {
+    font-size: 30px;
+    color: #FF6464;
+}

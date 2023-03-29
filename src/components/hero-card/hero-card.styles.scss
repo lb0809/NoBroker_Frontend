@@ -1,0 +1,39 @@
+.hero-card-container {
+  display: flex;
+  flex-direction: column;
+  /* background-color: #95dada;
+    border: 1px solid grey; */
+  /* border-radius: 5px; */
+  border-radius: 6px;
+  background: #ffffff;
+  box-shadow: 5px 5px 10px #c2c2c2,
+    -5px -5px 10px #ffffff;
+  padding: 25px;
+  cursor: pointer;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
+  /* background: url("../../assets/i3.jpg"); */
+  width: 20%;
+  height: 40vh;
+  position: absolute;
+  bottom: -45px;
+  left: 46px;
+}
+
+.hero-card-container h1 {
+  font-size: 30px;
+  color: wheat;
+  // position: absolute;
+  // right: -55px;
+}
+
+.hero-card-container h2 {
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+}
+
+.hero-card-container:hover {
+  transform: scale(1.05);
+}

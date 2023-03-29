@@ -1,0 +1,58 @@
+#cardHover {
+    width: 40vw;
+    height: 80px;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.83));
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    position: relative;
+    /* margin-top: 10px; */
+    /* margin-left: 30px; */
+    /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); */
+}
+
+.location-card-div {
+    width: 100%;
+    height: 100%;
+}
+
+#imageProfile {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+#userNameCard {
+    position: relative;
+    top: -75px;
+    left: 95px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+}
+
+.containBox p {
+    top: -65px;
+    left: 95px;
+    color: gray;
+    /* padding: 8px; */
+    /* text-transform: uppercase; */
+    font-size: 9px;
+    cursor: pointer;
+    margin-top: -4px;
+}
+
+.containBox .btn-follow {
+    /* text-decoration: none; */
+    /* border: 1.3px solid rgb(54, 166, 210); */
+    position: relative;
+    overflow: hidden;
+    color: rgb(66, 168, 131);
+    font-size: 18px;
+}
+
+.btn-message {
+    position: relative;
+}
