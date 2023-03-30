@@ -15,15 +15,15 @@ import TellAboutProp from './Postpropform_comp/TellAboutProp';
 import Markonmap from './Postpropform_comp/Markonmap';
 import propertyContext from '../../context/property/propertyContext';
 import Navigation from '../../routes/navigation/navigation.component';
-import { useDispatch,useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import {actioncreators} from '../../state/actioncreators'
+import { actioncreators } from '../../state/actioncreators'
 const PostPropertyForm = () => {
     // const users=useSelector(state=>state.user_func)
     // const [userstate, setuserstate] = useState(users)
     // const login_id=useSelector(state=>state.login_id)
-    const dispatch=useDispatch()
-    const{postprop}=bindActionCreators(actioncreators,dispatch)
+    const dispatch = useDispatch()
+    const { postprop } = bindActionCreators(actioncreators, dispatch)
     //navigation
     const navigate = useNavigate()
     //
@@ -44,8 +44,8 @@ const PostPropertyForm = () => {
     //     });
     // }
     // const backend_fun=async()=>{
-        
-      
+
+
     //   const response = await fetch('http://localhost:5000/adduser', {
     //     method: 'POST',
     //     headers: {
@@ -53,18 +53,18 @@ const PostPropertyForm = () => {
     //     },
     //     body: JSON.stringify(users)
     //   });
-      
+
     // }
 
-    
+
 
     // useEffect(() => {
     //     backend_clear()
     //     backend_fun()
     // // eslint-disable-next-line
-      
+
     // }, [users])
-    
+
     //formdata
     let fdata2 = {
         city: "",
@@ -88,7 +88,7 @@ const PostPropertyForm = () => {
         Area_Unit: '',
         image_file: {},
         image: {},
-        imgname:'',
+        imgname: '',
         isimg: 0,
         lat: 28.5,
         lng: 76.9,
@@ -97,17 +97,17 @@ const PostPropertyForm = () => {
     const [page, setpage] = useState(1)
     const [fields, setfields] = useState(fdata2)
 
-    const[addProperty,{loading}]=useMutation(ADD_PROPERTY,{
-        update(_,result){
+    const [addProperty, { loading }] = useMutation(ADD_PROPERTY, {
+        update(_, result) {
             console.log("res")
             console.log(result)
         },
-        onError(err){
+        onError(err) {
             console.log(err)
             console.log(err.graphQLErrors[0].extensions.exception.errors)
         },
-        variables:{
-            propInput:{
+        variables: {
+            propInput: {
                 title: fields.property_title,
                 category: fields.prop_cat,
                 age: Number(fields.property_age),
@@ -121,25 +121,25 @@ const PostPropertyForm = () => {
                 houseno: fields.houseno,
                 floorno: fields.floorno,
                 sublocality: fields.sublocality
-              },
+            },
             locationInput: {
                 longitude: Number(fields.lng),
                 latitude: Number(fields.lat)
-              },
-            dimensionInput:{
+            },
+            dimensionInput: {
                 bedrooms: Number(fields.bedrooms),
                 bathrooms: Number(fields.Bathrooms),
                 balconies: Number(fields.Balconies)
-              },
-            areaInput:{
+            },
+            areaInput: {
                 value: Number(fields.area),
                 unit: fields.Area_Unit
-              },
-            priceInput:{
+            },
+            priceInput: {
                 value: Number(fields.price),
                 currency: 'Ruppee'
             },
-            imgname:fields.imgname
+            imgname: fields.imgname
         }
     })
 
@@ -162,14 +162,14 @@ const PostPropertyForm = () => {
         setpage(page - 1);
     }
 
-    
-    const handleSubmit = async(e) => {
-        
+
+    const handleSubmit = async (e) => {
+
         // localStorage.setItem('body',data)
         e.preventDefault();
-        
+
         addProperty()
-        
+
         console.log(fields)
 
         // console.log(login_id)
@@ -187,18 +187,19 @@ const PostPropertyForm = () => {
         const val = e.target.value
         setfields({ ...fields, [name]: val })
     }
-    const handleChange_file = async(e) => {
+    const handleChange_file = async (e) => {
         const name = e.target.name
         const val = e.target.files[0]
         let formData = new FormData()
-        formData.append('file',val)
+        formData.append('file', val)
         const res = await (await fetch('http://localhost:5000/uploadImage', {
             method: 'POST',
             body: formData,
         })).json()
         console.log(res)
-        if(res){
-            setfields({...fields,imgname:'http://localhost:5000/'+res.filename,isimg: 1, image: URL.createObjectURL(e.target.files[0])})}
+        if (res) {
+            setfields({ ...fields, imgname: 'http://localhost:5000/' + res.filename, isimg: 1, image: URL.createObjectURL(e.target.files[0]) })
+        }
     }
 
     const pageChanger = () => {
@@ -225,8 +226,8 @@ const PostPropertyForm = () => {
         }
 
     }
-    
-    
+
+
     return (
         <>
             <div className="postform_container">
@@ -241,7 +242,7 @@ const PostPropertyForm = () => {
                         <div className="initial-container">
 
 
-                            <div className="transparent_bg mb-0 " style={{ "padding": "0px", "border": "1px solid #2F89FC", "backgroundColor": "#153462", "borderRadius": "10px", "color": "white" }}>
+                            <div className="postprop_header" >
                                 <p className="italic_font" style={{ "textAlign": "center", "margin": "0px", "fontSize": "30px", "fontFamily": "monospace" }}>Begin posting your
                                     property</p>
                             </div>
@@ -253,18 +254,18 @@ const PostPropertyForm = () => {
 
 
 
-                            <div className='row justify-content-between' style={{ "textAlign": "center", "margin": "0px" }}>
+                            <div className='row justify-content-between' style={{ "textAlign": "center", "margin": "0px", }}>
                                 <div className="col-4">
 
                                     <button onClick={handlePrev} className="btn btn-outline-dark"
-                                        style={{ "padding": "5px 4vw", "border": "3px solid #91C788", "backgroundColor": "#91C788", "color": "#000000", "fontFamily": "monospace", "fontSize": "18px", "fontWeight": "bold" }} disabled={page === 1 ? 1 : 0}>Previous</button>
+                                        style={{ "padding": "5px 4vw", "border": "3px solid #886ce4", "backgroundColor": "#886ce4", "color": "#000000", "fontFamily": "monospace", "fontSize": "18px", "fontWeight": "bold" }} disabled={page === 1 ? 1 : 0}>Previous</button>
                                 </div>
                                 <div className="col-4">
 
                                     {page !== 7 && <button onClick={handleNext} className="btn btn-outline-dark"
-                                        style={{ "padding": "5px 4vw", "border": "3px solid #91C788", "backgroundColor": "#91C788", "color": "#000000", "fontFamily": "monospace", "fontSize": "18px", "fontWeight": "bold" }}>Next</button>}
+                                        style={{ "padding": "5px 4vw", "border": "3px solid #886ce4", "backgroundColor": "#886ce4", "color": "#000000", "fontFamily": "monospace", "fontSize": "18px", "fontWeight": "bold" }}>Next</button>}
                                     {page === 7 && <button type="submit" className="btn btn-outline-dark"
-                                        style={{ "padding": "5px 4vw", "border": "3px solid #91C788", "backgroundColor": "#91C788", "color": "#000000", "fontFamily": "monospace", "fontSize": "18px", "fontWeight": "bold" }}>Submit</button>}
+                                        style={{ "padding": "5px 4vw", "border": "3px solid #886ce4", "backgroundColor": "#886ce4", "color": "#000000", "fontFamily": "monospace", "fontSize": "18px", "fontWeight": "bold" }}>Submit</button>}
                                 </div>
 
                             </div>
@@ -282,7 +283,7 @@ const PostPropertyForm = () => {
     )
 
 }
-const ADD_PROPERTY=gql`
+const ADD_PROPERTY = gql`
     mutation Addproperty($propInput: propInput, $addressInput: addressInput, $locationInput: LocationInput, $dimensionsInput: DimensionsInput, $areaInput: AreaInput, $priceInput: PriceInput,$imgname: String) {
         addproperty(propInput: $propInput, addressInput: $addressInput, locationInput: $locationInput, dimensionsInput: $dimensionsInput, areaInput: $areaInput, priceInput: $priceInput,imgname: $imgname) {
             id

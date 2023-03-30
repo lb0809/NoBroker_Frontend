@@ -5,7 +5,7 @@ const TellAboutProp = (props) => {
   const { property_title, abt_property, property_age } = fdata
   return (
     <>
-      <div className="transparent_bg mt-0" style={{ "padding": "0px", "border": "1px solid #FF6F6F", "backgroundColor": "#FF6F6F", "borderRadius": "10px" }}>
+      <div className="postprop_subheader" >
         <p className="italic_font" style={{ "textAlign": "center", "margin": "0px", "fontSize": "30px", "fontFamily": "monospace" }}>Tell Us about your property</p>
       </div>
       <div class="form_element_box" style={{ "margin": "20px", "padding": "20px" }}>
