@@ -1,0 +1,303 @@
+.Dashboard_container {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+
+}
+
+.sidebar_container {
+    /* border: 1px solid black; */
+    width: 20vw;
+    /* background-color: #3E54AC; */
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: fixed;
+
+
+}
+
+.user_profile_container {
+    /* border: 1px solid black; */
+    height: 30vh;
+
+}
+
+.profile_image {
+    height: 20vh;
+    width: 10vw;
+    margin: 0px 5.2vw;
+    margin-top: 18px;
+    border: 1px solid #2f4185;
+    border-radius: 50%;
+
+}
+
+.userdetail_text {
+
+    text-align: center;
+    color: white;
+
+}
+
+.dashboard_routes {
+    border-top: 1px solid #202d5a;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar_buttons_container {
+    /* border: 1px solid #202d5a; */
+    height: 56vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+
+
+
+}
+
+.sidebar_button {
+
+    /* height: 6vh;
+    width: 15vw;
+    background-color: #3E54AC;
+    border: none;
+    text-decoration: none; */
+    width: 20vw;
+    background-color: transparent;
+    border: none;
+    color: white;
+    height: 7vh;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-bottom: 1px solid #202d5a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar_button:hover {
+    background-image: linear-gradient(-225deg, #886ce4 0%, #6B8DD6 48%, #8E37D7 100%);
+}
+
+.sidebar_icon {
+    padding: 10px;
+    color: white;
+}
+
+.logout_container {
+    border-top: 1px solid black;
+    height: 14vh;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+
+}
+
+.logout_button {
+    width: 20vw;
+    background-color: transparent;
+    border: none;
+    color: white;
+    height: 7vh;
+    /* padding: 15px 32px; */
+    /* text-align: center; */
+    text-decoration: none;
+    /* display: inline-block; */
+    font-size: 20px;
+    border-bottom: 1px solid #202d5a;
+    display: flex;
+    /* text-align: center; */
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.logout_button:hover {
+    background-image: linear-gradient(-225deg, #785cd2 0%, #885ab5 48%, #771fbf 100%);
+}
+
+.logout_icon {
+    padding: 10px;
+    color: white;
+
+}
+
+
+.content_container {
+    /* border: 1px solid black; */
+    width: 83vw;
+    position: relative;
+    left: 20vw;
+}
+
+.navbar_content_container {
+    height: 8vh;
+    width: 75vw;
+    /* border: 1px solid black; */
+
+    margin-top: 3vh;
+    margin-left: 2.5vw;
+
+    padding: 10px;
+    position: fixed;
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.dashboard_navbar_button {
+    background-color: transparent;
+    /* border: 1px solid black; */
+    color: white;
+    height: 8vh;
+    text-decoration: none;
+    /* display: inline-block; */
+    font-size: 20px;
+    padding: 2vh 4vw;
+    /* border-radius: 20px; */
+    border: none;
+
+
+}
+
+.dashboard_navbar_button:hover {
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.Editprofile_container {
+    /* border: 1px solid black; */
+    margin-top: 25vh;
+    width: 40vw;
+    height: 60vh;
+    padding: 40px 5vw;
+    margin-left: 20vw;
+    border-radius: 10px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.editprofile_input {
+    width: 30vw;
+    height: 6vh;
+    margin-top: 10px;
+    /* border-radius: 5px;
+    border-color: #aeb0b6; */
+}
+
+.editprofile_label {
+    font-size: 15px;
+}
+
+.editprofile_submit_button {
+    width: 10vw;
+    height: 5vh;
+    border: none;
+    color: white;
+    background-color: #785cd2;
+    align-self: center;
+}
+
+/* --------------Modal--------------  */
+
+
+
+.modal_header_container {
+    background-color: #886ce4;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal_header_container_small {
+    background-color: #886ce4;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2vh 2vw;
+}
+
+.modal_mini_container {
+    margin: 2vh 2vw;
+    padding: 2vh 2vw;
+    background-color: rgb(247, 243, 249);
+}
+
+.modal_label_font {
+    margin-left: 10px;
+    font-size: 1.2rem;
+    color: rgb(72, 68, 68);
+}
+
+.modal_radio_label {
+    font-size: 1.1rem;
+    margin-left: 5px;
+    margin-top: 5px;
+
+}
+
+.modal_input_box {
+    width: 50vw;
+    height: 6vh;
+    margin: 10px;
+}
+
+
+/* -------------Posted Property Card------------ */
+
+.postedporpertycard_container {
+    background-color: #ffffff;
+    margin: 10vw 22vw;
+    height: 60vh;
+    padding: 15px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+
+}
+
+.posted_property_card_img {
+    width: 35vw;
+    height: 40vh;
+    margin: 0vw 4px;
+
+}
+
+.pp_card_content {
+    background-color: aliceblue;
+    height: 16vh;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+
+
+}
+
+.pp_card_mini_content_box {
+    /* background-color: #202d5a; */
+    width: 11.5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* align-items: center; */
+    text-align: center;
+}
+
+.pp_card_content_font {
+    color: rgb(76, 79, 81);
+    font-family: Arial, Helvetica, sans-serif;
+}
