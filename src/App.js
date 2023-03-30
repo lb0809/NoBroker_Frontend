@@ -18,7 +18,7 @@ import AboutUs from "./components/aboutus/aboutus";
 import Contact from "./components/contact/contact";
 import Chat from "./components/chat/Chat";
 import ChatInterface from "./components/chat/chat-interface";
-import DashBoard from "./components/DashBoard/DashBoard";
+import DashBoard from "./components/DashBoard/DashBoard_User";
 
 
 
