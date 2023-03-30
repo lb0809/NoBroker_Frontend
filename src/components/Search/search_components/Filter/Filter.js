@@ -5,8 +5,11 @@ import propertyContext from '../../../../context/property/propertyContext';
 import Navigation from '../../../../routes/navigation/navigation.component';
 import "./Filter.css";
 const Filter = (props) => {
-    let { loading, error, data } = useQuery(GET_PROPERTY)
     const{res,setres}=props
+    let { loading, error, data } = useQuery(GET_PROPERTY,{
+      skip:false
+    })
+    
     if(data){
       data=data.getProperties
       setres(data)
@@ -45,7 +48,7 @@ const Filter = (props) => {
     useEffect(() => { 
       filterop();
       // eslint-disable-next-line
-    }, [selected])
+    }, [selected,res])
     
     const handleChange=(e)=>{
         const name=e.target.name
