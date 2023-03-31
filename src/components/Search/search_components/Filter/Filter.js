@@ -5,13 +5,22 @@ import propertyContext from '../../../../context/property/propertyContext';
 import Navigation from '../../../../routes/navigation/navigation.component';
 import "./Filter.css";
 const Filter = (props) => {
+
+    // useQuery
     let { loading, error, data } = useQuery(GET_PROPERTY)
     const{res,setres}=props
     if(data){
       data=data.getProperties
       setres(data)
       console.log(data)}
-    
+    //
+    // let {load, err, dat} = useQuery(GET_USERS)
+    // const{response, setresponse} = props
+    // if(dat){
+    //   dat = dat.getUsers
+    //   setresponse(dat)
+    //   console.log(dat)
+    // }
     
     const [selected, setselected] = useState({
       location:'0',
@@ -292,6 +301,19 @@ const Filter = (props) => {
     </>
   )
 }
+
+// const GET_USERS=gql`
+// query Getusers {
+//   getusers {
+//     id
+//     email
+//     username
+//     createdAt
+//   }
+// }
+// `
+
+//
 const GET_PROPERTY=gql`
   query GetProperties {
     getProperties {

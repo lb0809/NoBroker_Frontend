@@ -113,6 +113,7 @@
 .main_row_header {
     font-size: 22px;
     color: #D1D4C9;
+    padding: 0, 200px, 0;
 }
 
 .trash_css {

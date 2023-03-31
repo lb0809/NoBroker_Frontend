@@ -10,7 +10,7 @@
     width: 10rem;
     height: 10rem;
     border-radius: 10px;
-    background: #252827;
+    /* background: #252827; */
     box-shadow: 8px 8px 16px #111312,
         -8px -8px 16px #393d3c;
 }
