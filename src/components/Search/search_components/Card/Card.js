@@ -2,7 +2,6 @@ import React from 'react'
 import './Card.css';
 const Card = (props) => {
   const{coords,setcoords,data,curdata,setcurdata}=props
-  console.log(data)
   const{address,age,category,description,dimensions,imgname,location,owner_name,price,purpose,title}=data
   const{apartment_society,city,floorno,houseno,locality,sublocality}=address
   const{area,balconies,bathrooms,bedrooms}=dimensions
@@ -36,7 +35,7 @@ const Card = (props) => {
             </div>
             <div className="icons row mt-0 pt-0">
                     <div className="col-4">
-                    <i className="fa fa-bed" aria-hidden="true" style={{ marginLeft: "0.01vw", marginRight: "0.2vw", color: "black" }}><span style={{ "marginLeft": "0.3vw", "color": "gray","fontSize":"11px" }}>{`${bedrooms} Bed`} </span></i>
+                    <i className="fa fa-bed" aria-hidden="true" style={{ marginLeft: "0.01vw", marginRight: "0.2vw", color: "black" }}><span style={{ "marginLeft": "0.3vw", "color": "gray","fontSize":"11px" }}>{bedrooms} </span></i>
                     </div>
                     <div className="col-4">
                     <i className="fa fa-bath" aria-hidden="true" style={{ marginLeft: "0.01vw", marginRight: "0.2vw", color:"black"}}><span style={{ marginLeft: "0.3vw", color: "gray","fontSize":"11px" }}>{`${bathrooms} Bath `}</span></i>

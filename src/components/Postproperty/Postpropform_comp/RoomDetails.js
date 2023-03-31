@@ -6,7 +6,7 @@ const RoomDetails = (props) => {
   const { bedrooms, Bathrooms, Balconies, floorno } = fdata;
   return (
     <>
-      <div className="transparent_bg mt-0 " style={{ "padding": "0px", "border": "1px solid #FF6F6F", "backgroundColor": "#FF6F6F", "borderRadius": "10px" }}>
+      <div className="postprop_subheader" >
         <p className="italic_font" style={{ "textAlign": "center", "margin": "0px", "fontSize": "30px", "fontFamily": "monospace" }}>Add Room
           Details</p>
       </div>

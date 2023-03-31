@@ -1,12 +1,43 @@
-import React from "react";
+import { gql, useMutation } from '@apollo/client';
+import React, { useState } from "react";
 import bgimg4 from "../contact/img/bgimg4.jpg";
 import phone from "../contact/img/phone.png";
 import address from "../contact/img/address.png";
 import email from "../contact/img/email.png";
 import "./contact.css"
 
-
 const Contact = () => {
+    const init={
+        email:null,
+        name:null,
+        message:null
+    }
+    const [query, setquery] = useState(init)
+    const{email,name,message}=query
+    const [postQuery, { loading }] = useMutation(POST_QUERY, {
+        update(_, result) {
+            console.log("res")
+            console.log(result)
+            setquery(init)
+        },
+        onError(err) {
+            console.log(err)
+            console.log(err.graphQLErrors[0].extensions.exception.errors)
+        },
+        variables: {
+            email:query.email,
+            name:query.name,
+            message:query.message
+        }})
+    const handleSubmit=(e)=>{
+        e.preventDefault()
+        postQuery()
+    }
+    const handleChange = (e) => {
+        const name = e.target.name
+        const val = e.target.value
+        setquery({ ...query, [name]: val })
+    }
     return (
     <>
       {/* here navbar comes and the below image will touch it */}
@@ -78,21 +109,23 @@ const Contact = () => {
                                 <div className="contact_form_title">
                                     Get in touch !
                                 </div>
+                                <form action="/post" method="post" onSubmit={handleSubmit} encType="multipart/form-data">
                                 <div class="mt-4 row">
                                     <div class="col-12 mb-3">
-                                        <textarea id="textareaComment" class="form-control"
+                                        <textarea onChange={handleChange} value={message} name="message" id="textareaComment" class="form-control"
                                         placeholder="*Your Message" rows="3"></textarea>
                                     </div>
                                     <div class="col-6 mb-3">
-                                        <input type="text" class="form-control" id="exampleInputName" placeholder="*Your Name"></input>
+                                        <input type="text" onChange={handleChange} value={name} name="name" class="form-control" id="exampleInputName" placeholder="*Your Name"></input>
                                     </div>
                                     <div class="col-6 mb-3">
-                                        <input type="email" class="form-control" id="exampleInputEmail" placeholder="*Your Email"></input>
+                                        <input type="email" onChange={handleChange} value={email} name="email" class="form-control" id="exampleInputEmail" placeholder="*Your Email"></input>
                                     </div>
                                     <div class="col-12">
                                         <button type="submit" class="submit_button w-100">LEAVE A MESSAGE</button>
                                     </div>
                                 </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -102,5 +135,10 @@ const Contact = () => {
     </>
     );
 }
+const POST_QUERY=gql`
+    mutation PostQuery($email: String!, $name: String!, $message: String!) {
+        postQuery(email: $email, name: $name, message: $message)
+    }
+`
 
 export default Contact

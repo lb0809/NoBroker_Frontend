@@ -3512,6 +3512,7 @@
     "normalize-path" "^3.0.0"
     "picomatch" "^2.0.4"
 
+<<<<<<< HEAD
 "apexcharts@^3.35.0":
   "integrity" "sha512-oipJRkaxt8DPGRmn1kur6aPzML1JSpf2M3ecu+gyw+8xiNmT2C0p1uuuqPZrk+Lr2hmDxzNBPR7TvxwRl3ozgw=="
   "resolved" "https://registry.npmjs.org/apexcharts/-/apexcharts-3.35.0.tgz"
@@ -3524,6 +3525,8 @@
     "svg.resize.js" "^1.4.3"
     "svg.select.js" "^3.0.1"
 
+=======
+>>>>>>> f9b0b4811e631bc364b72ef12ef14e649afd0824
 "apollo-link-context@^1.0.20":
   "integrity" "sha512-MLLPYvhzNb8AglNsk2NcL9AvhO/Vc9hn2ZZuegbhRHGet3oGr0YH9s30NS9+ieoM0sGT11p7oZ6oAILM/kiRBA=="
   "resolved" "https://registry.npmjs.org/apollo-link-context/-/apollo-link-context-1.0.20.tgz"
@@ -5867,6 +5870,7 @@
   "resolved" "https://registry.npmjs.org/framer-motion/-/framer-motion-6.2.9.tgz"
   "version" "6.2.9"
   dependencies:
+<<<<<<< HEAD
     "framesync" "6.0.1"
     "hey-listen" "^1.0.8"
     "popmotion" "11.0.3"
@@ -5892,6 +5896,8 @@
   "resolved" "https://registry.npmjs.org/fs-extra/-/fs-extra-10.1.0.tgz"
   "version" "10.1.0"
   dependencies:
+=======
+>>>>>>> f9b0b4811e631bc364b72ef12ef14e649afd0824
     "graceful-fs" "^4.2.0"
     "jsonfile" "^6.0.1"
     "universalify" "^2.0.0"
@@ -7847,6 +7853,11 @@
   "integrity" "sha512-PiVXnNuFm5+iYkLBNeq5211hvO38y63T0i2KKh2KnUs3RpzJ+JtODFjkD8yjLwnDkTYF1eKXheUwdssR+NRZdg=="
   "resolved" "https://registry.npmjs.org/node-releases/-/node-releases-2.0.6.tgz"
   "version" "2.0.6"
+
+"nodemailer@^6.9.1":
+  "integrity" "sha512-qHw7dOiU5UKNnQpXktdgQ1d3OFgRAekuvbJLcdG5dnEo/GtcTHRYM7+UfJARdOFU9WUQO8OiIamgWPmiSFHYAA=="
+  "resolved" "https://registry.npmjs.org/nodemailer/-/nodemailer-6.9.1.tgz"
+  "version" "6.9.1"
 
 "normalize-path@^3.0.0", "normalize-path@~3.0.0":
   "integrity" "sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA=="
