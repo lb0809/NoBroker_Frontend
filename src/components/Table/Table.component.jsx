@@ -59,7 +59,7 @@ export default function BasicTable() {
     }
     return (
         <div className="Table">
-            <h3>Recent Orders</h3>
+            <h3>Recent Properties</h3>
             <hr />
             <TableContainer
                 component={Paper}

@@ -46,7 +46,7 @@ export const cardsData = [
       boxShadow: "0px 10px 20px 0px #e0c6f5",
     },
     barValue: 70,
-    value: "25,970",
+    value: "43  ",
     png: <i class="fa fa-inr" aria-hidden="true"></i>,
     series: [
       {
@@ -62,7 +62,7 @@ export const cardsData = [
       boxShadow: "0px 10px 20px 0px #FDC0C7",
     },
     barValue: 80,
-    value: "14,270",
+    value: "14",
     png: <i class="fa fa-money" aria-hidden="true"></i>,
     series: [
       {
@@ -79,7 +79,7 @@ export const cardsData = [
       boxShadow: "0px 10px 20px 0px #F9D59B",
     },
     barValue: 60,
-    value: "4,270",
+    value: "23",
     png: <i class="fa fa-list-alt" aria-hidden="true"></i>,
     series: [
       {
