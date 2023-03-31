@@ -101,6 +101,7 @@ const PostPropertyForm = () => {
         update(_, result) {
             console.log("res")
             console.log(result)
+            navigate('/search')
         },
         onError(err) {
             console.log(err)
@@ -127,6 +128,8 @@ const PostPropertyForm = () => {
                 latitude: Number(fields.lat)
             },
             dimensionInput: {
+              },
+            dimensionsInput:{
                 bedrooms: Number(fields.bedrooms),
                 bathrooms: Number(fields.Bathrooms),
                 balconies: Number(fields.Balconies)
@@ -167,10 +170,11 @@ const PostPropertyForm = () => {
 
         // localStorage.setItem('body',data)
         e.preventDefault();
-
-        addProperty()
-
+        console.log(" here")
         console.log(fields)
+        addProperty()
+        
+        
 
         // console.log(login_id)
         // backend_clear()
@@ -178,9 +182,9 @@ const PostPropertyForm = () => {
         // setuserstate({...userstate[login_id],posted_property:userstate[login_id].posted_property.concat(fields)})
         // backend_fun({...userstate[login_id],posted_property:userstate[login_id].posted_property.concat(fields)})
         // postprop(fields,login_id)
-        setProp(prop.concat(fields))
-        console.log(prop)
-        navigate('/search')
+        // setProp(prop.concat(fields))
+        // console.log(prop)
+        
     }
     const handleChange = (e) => {
         const name = e.target.name
