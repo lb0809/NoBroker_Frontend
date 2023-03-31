@@ -1,0 +1,32 @@
+/* .userlist-attributes {
+    background: linear-gradient(106.37deg,
+            #ffe1bc 29.63%,
+            #ffcfd1 51.55%,
+            #f3c6f1 90.85%);
+            background-color: #000000;
+            background-image: linear-gradient(147deg, #000000 0%, #04619f 74%);
+} */
+
+.userlist-container {
+    background: linear-gradient(106.37deg,
+            #ffe1bc 29.63%,
+            #ffcfd1 51.55%,
+            #f3c6f1 90.85%);
+    background-color: #000000;
+    background-image: linear-gradient(147deg, #000000 0%, #04619f 74%);
+    width: 100%;
+    height: 100vh;
+    margin-top: -10px;
+}
+
+.userlist-attributes h3 {
+    /* margin-right: 100px; */
+    color: rgb(214, 182, 182);
+    padding: 10px 10rem 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.userlist-details {
+    background: rgba(255, 255, 255, 0.148);
+}

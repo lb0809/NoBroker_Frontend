@@ -28,7 +28,7 @@ const Admin_property = () => {
                     <div className="col-2">
                         <p className="p_class main_row_header" >Category</p>
                     </div>
-                    <div className="col-2">
+                    {/* <div className="col-2">
                         <p className="p_class main_row_header" >Price</p>
                     </div>
                     <div className="col-1">
@@ -36,7 +36,7 @@ const Admin_property = () => {
                     </div>
                     <div className="col-2">
                         <p className="p_class main_row_header" >City</p>
-                    </div>
+                    </div> */}
 
                 </div>
 
