@@ -7,12 +7,12 @@ import DashboardNavbar from "./DashboardNavbar";
 import EditProfile from "./EditProfile";
 import EditProperty_modal from "./EditProperty_modal";
 import Posted_property_card from './Posted_property_card';
-
+import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { actioncreators } from '../../state/actioncreators'
 
 import profile from "../../images/profile.png"
-import { useSelector,useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
@@ -20,10 +20,10 @@ const DashBoard_User = () => {
     const [res, setres] = useState(null)
     const [is, setis] = useState(0)
     const navigate = useNavigate();
-    const user=useSelector(state=>state.user)
+    const user = useSelector(state => state.user)
     const [user_new, setuser_new] = useState(user.user)
     console.log(user)
-    const{username,email}=user_new
+    const { username, email } = user_new
     console.log(username)
     const dispatch = useDispatch()
     const { login,logout } = bindActionCreators(actioncreators, dispatch)
@@ -57,7 +57,7 @@ const DashBoard_User = () => {
                 <img src={profile} alt="no" className='profile_image' />
                 <div className="userdetail_text">
                     <h4>{username}</h4>
-                    <h5>City</h5>
+
 
                 </div>
             </div>
@@ -76,17 +76,17 @@ const DashBoard_User = () => {
 
                 </div>
                 <div className="logout_container">
-                    <button className='logout_button' onClick={()=>{logout()  ; navigate('/auth') }}>
+                    <button className='logout_button' onClick={() => { logout(); navigate('/auth') }}>
                         <span className="material-symbols-outlined logout_icon">
                             logout
                         </span>
                         Logout
                     </button>
                     <button className='logout_button'>
-                        <span class="material-symbols-outlined logout_icon">
-                            switch_account
-                        </span>
-                        Switch Account</button>
+                        
+                        <li ><i class="fa fa-external-link"></i><Link className='' style={{"color" : "white"}} to="/chat">chat</Link></li>
+                        
+                        </button>
                 </div>
             </div>
         </div>

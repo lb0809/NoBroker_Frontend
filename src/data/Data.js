@@ -16,10 +16,11 @@ export const SidebarData = [
     heading: "Dashboard",
     link: "/dash"
   },
-  // {
-  //   icon: <i class="fa fa-list-alt" aria-hidden="true"></i>,
-  //   heading: "Orders",
-  // },
+  {
+    icon: <i class="fa fa-list-alt" aria-hidden="true"></i>,
+    heading: "Contact us",
+    link:"/customerMsg"
+  },
   {
     icon: <i class="fa fa-users" aria-hidden="true"></i>,
     heading: "Users",
