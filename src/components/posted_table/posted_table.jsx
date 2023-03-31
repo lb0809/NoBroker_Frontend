@@ -56,7 +56,7 @@ export default function PropertyTable() {
         //     createData(data.getProperties[3].owner_email, data.getProperties[3].category, data.getProperties[3].price.value, data.getProperties[3].address.city, data.getProperties[0].address.city),
         // ];
         for (let i = 0; i < data.getProperties.length; i++) {
-            rows.push(createData(data.getProperties[0].owner_email, data.getProperties[0].category, data.getProperties[0].price.value, data.getProperties[0].address.city, data.getProperties[0].address.city))            
+            rows.push(createData(data.getProperties[i].owner_email, data.getProperties[i].category, data.getProperties[i].price.value, data.getProperties[i].address.city, data.getProperties[i].address.city))            
         }
         
     }

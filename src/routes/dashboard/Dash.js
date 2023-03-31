@@ -12,7 +12,7 @@ const Dash = () => {
                     {/* <h1>jhsdfhsikj</h1> */}
                     <Sidebar />
                     <MainDash />
-                    <RightSide />
+                    {/* <RightSide /> */}
                 </div>
             </div>
         </div>
