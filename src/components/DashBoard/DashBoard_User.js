@@ -11,18 +11,18 @@ import { bindActionCreators } from 'redux';
 import { actioncreators } from '../../state/actioncreators'
 
 import profile from "../../images/profile.png"
-import { useSelector,useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 const DashBoard_User = () => {
     const navigate = useNavigate();
-    const user=useSelector(state=>state.user)
+    const user = useSelector(state => state.user)
     const [user_new, setuser_new] = useState(user.user)
     console.log(user)
-    const{username,email}=user_new
+    const { username, email } = user_new
     console.log(username)
     const dispatch = useDispatch()
-    const { login,logout } = bindActionCreators(actioncreators, dispatch)
+    const { login, logout } = bindActionCreators(actioncreators, dispatch)
 
 
     const [tabIndex, setTabIndex] = useState(1);
@@ -33,7 +33,7 @@ const DashBoard_User = () => {
                 <img src={profile} alt="no" className='profile_image' />
                 <div className="userdetail_text">
                     <h4>{username}</h4>
-                    <h5>City</h5>
+
 
                 </div>
             </div>
@@ -52,7 +52,7 @@ const DashBoard_User = () => {
 
                 </div>
                 <div className="logout_container">
-                    <button className='logout_button' onClick={()=>{logout()  ; navigate('/auth') }}>
+                    <button className='logout_button' onClick={() => { logout(); navigate('/auth') }}>
                         <span className="material-symbols-outlined logout_icon">
                             logout
                         </span>
