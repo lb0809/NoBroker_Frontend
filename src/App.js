@@ -23,6 +23,7 @@ import DashBoard from "./components/DashBoard/DashBoard_User"
 import Dash from "./routes/dashboard/Dash"
 import Users from "./components/users/users";
 import PostedProperties from "./components/posted_properties/posted-property";
+import CustomerMsg from "./components/customerMsg/customerMsg";
 
 
 
@@ -55,6 +56,9 @@ function App() {
             <Route exact path="/dash" element={<Dash />} />
             <Route exact path="/users" element={<Users />} />
             <Route exact path="/postedProperties" element={<PostedProperties />} />
+            <Route exact path="/customerMsg" element={<CustomerMsg />} />
+
+
 
 
 
