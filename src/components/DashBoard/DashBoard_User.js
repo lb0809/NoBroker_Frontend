@@ -7,9 +7,23 @@ import EditProfile from "./EditProfile";
 import EditProperty_modal from "./EditProperty_modal";
 import Posted_property_card from './Posted_property_card';
 
+import { bindActionCreators } from 'redux';
+import { actioncreators } from '../../state/actioncreators'
+
 import profile from "../../images/profile.png"
+import { useSelector,useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const DashBoard_User = () => {
+    const navigate = useNavigate();
+    const user=useSelector(state=>state.user)
+    const [user_new, setuser_new] = useState(user.user)
+    console.log(user)
+    const{username,email}=user_new
+    console.log(username)
+    const dispatch = useDispatch()
+    const { login,logout } = bindActionCreators(actioncreators, dispatch)
+
 
     const [tabIndex, setTabIndex] = useState(1);
 
@@ -18,7 +32,7 @@ const DashBoard_User = () => {
             <div className="user_profile_container">
                 <img src={profile} alt="no" className='profile_image' />
                 <div className="userdetail_text">
-                    <h4>UserName</h4>
+                    <h4>{username}</h4>
                     <h5>City</h5>
 
                 </div>
@@ -38,7 +52,7 @@ const DashBoard_User = () => {
 
                 </div>
                 <div className="logout_container">
-                    <button className='logout_button'>
+                    <button className='logout_button' onClick={()=>{logout()  ; navigate('/auth') }}>
                         <span className="material-symbols-outlined logout_icon">
                             logout
                         </span>
@@ -57,7 +71,7 @@ const DashBoard_User = () => {
 
             {
                 tabIndex === 1 && (
-                    <EditProfile></EditProfile>
+                    <EditProfile setuser_n={setuser_new} />
                 )
             }
             {

@@ -94,6 +94,7 @@ const SignInForm = () => {
     event.preventDefault();
 
     try {
+      console.log(formFields)
       loginUser()
       // console.log(formFields);
       // console.log(users)
