@@ -18,17 +18,23 @@ import AboutUs from "./components/aboutus/aboutus";
 import Contact from "./components/contact/contact";
 import Chat from "./components/chat/Chat";
 import ChatInterface from "./components/chat/chat-interface";
-// import DashBoard from "./components/DashBoard/DashBoard";
-import DashBoard from "./components/DashBoard/DashBoard_User"
+import DashBoard from "./components/DashBoard/DashBoard_User";
 import Dash from "./routes/dashboard/Dash"
 import Users from "./components/users/users";
 import PostedProperties from "./components/posted_properties/posted-property";
 import CustomerMsg from "./components/customerMsg/customerMsg";
+import { useDispatch, useSelector } from "react-redux";
+import { actioncreators } from "./state/actioncreators";
+import { bindActionCreators } from "redux";
 
 
 
 
 function App() {
+  const user = useSelector(state => state.user.user)
+  console.log(user)
+  const dispatch = useDispatch()
+  const { login, logout } = bindActionCreators(actioncreators, dispatch)
   return (
     <>
       <PropState>
@@ -41,13 +47,13 @@ function App() {
             <Route exact path="/" element={<Home />} />
             <Route exact path="/home" element={<Home />} />
 
-            <Route exact path="/postyourproperty" element={<PostPropertyForm />} />
+            <Route exact path="/postyourproperty" element={user ? <PostPropertyForm /> : <Authentication />} />
             <Route exact path="/Admin_home" element={<Admin_home />} />
             <Route exact path="/Admin_user" element={<Admin_user />} />
             <Route exact path="/search" element={<Search />} />
             <Route exact path="/Admin_property" element={<Admin_property />} />
             <Route exact path="/Admin_ContactUs" element={<Admin_ContactUs />} />
-            <Route exact path="/Auth" element={<Authentication />} />
+            <Route exact path="/Auth" element={user ? <DashBoard /> : <Authentication />} />
             <Route exact path="/aboutus" element={<AboutUs />} />
             <Route exact path="/contact" element={<Contact />} />
             <Route exact path="/chat" element={<Chat />} />
