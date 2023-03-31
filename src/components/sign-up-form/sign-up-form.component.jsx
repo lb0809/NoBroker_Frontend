@@ -11,6 +11,8 @@ import { useNavigate } from 'react-router-dom';
 import { SignUpContainer } from './sign-up-form.styles';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
+import verifyotp from './verifyotp'
+// import sendMail from './sendMail.cjs'
 
 const defaultFormFields = {
   username: '',
@@ -21,14 +23,16 @@ const defaultFormFields = {
 }
 
 const SignUpForm = () => {
-  const user=useSelector(state=>state.user)
+  const user = useSelector(state => state.user)
   const dispatch = useDispatch()
-  const { login,logout } = bindActionCreators(actioncreators, dispatch)
+  const { login, logout } = bindActionCreators(actioncreators, dispatch)
 
   const [confirmpassword, setconfirmpassword] = useState('')
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { username, email, password } = formFields;
-
+  const [tabIndex, setTabIndex] = useState(1);
+  const [otp, setotp] = useState(0);
+  const [otpform, setotpform] = useState(0);
   // const [values, setValues] = useState({
   //   username: "",
   //   email: "",
@@ -86,53 +90,69 @@ const SignUpForm = () => {
     setFormFields(defaultFormFields);
   };
 
-  const [addUser,{loading}]=useMutation(REGISTER_USER,{
-    update(_,result){
+  const [addUser, { loading }] = useMutation(REGISTER_USER, {
+    update(_, result) {
       console.log(result)
       login(result.data.register)
+      navigate('/dashboard');
     },
-    onError(err){
+    onError(err) {
       console.log(err)
-      console.log(err.graphQLErrors[0].extensions.exception.errors)
+      // console.log(err.graphQLErrors[0].extensions.exception.errors)
     },
-    variables:{
-      registerInput:{
-        username:formFields.username,
-        email:formFields.email,
-        password:formFields.password,
-        confirmpassword:formFields.password}
+    variables: {
+      registerInput: {
+        username: formFields.username,
+        email: formFields.email,
+        password: formFields.password,
+        confirmpassword: formFields.password
+      }
     }
   })
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
 
+    event.preventDefault();
     if (password !== confirmpassword) {
       alert('passwords do not match');
       return;
     }
 
     try {
-    //   // await createUserDocumentFromAuth(user, { displayName });
-    //   // console.log(formFields);
-      
-    //   setusersstate(usersstate.concat(formFields))
-    //   console.log(usersstate)
-    //   const resp = await fetch('http://localhost:5000/clear', {
-    //     method: 'GET',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //   });
-      
-    //   const response = await fetch('http://localhost:5000/adduser', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(usersstate.concat(formFields))
-    //   });
-      addUser()
+      //   // await createUserDocumentFromAuth(user, { displayName });
+      //   // console.log(formFields);
+
+      //   setusersstate(usersstate.concat(formFields))
+      //   console.log(usersstate)
+      //   const resp = await fetch('http://localhost:5000/clear', {
+      //     method: 'GET',
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //     },
+      //   });
+
+      //   const response = await fetch('http://localhost:5000/adduser', {
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //     },
+      //     body: JSON.stringify(usersstate.concat(formFields))
+      //   });
+
+      setTabIndex(2);
+      console.log(formFields)
+      const res = await (await fetch('http://localhost:5000/auth', {
+        headers: {
+          'Accept': 'Application/json',
+          'content-Type': 'application/json'
+        },
+        method: 'POST',
+        body: JSON.stringify(formFields)
+      })).json()
+      console.log(res);
+      setotp(res);
+
+      // addUser()
       // register(formFields)
       // resetFormFields();
       // navigate('/home');
@@ -146,6 +166,23 @@ const SignUpForm = () => {
     }
 
   };
+  const handlesubmitotp = (event) => {
+    event.preventDefault();
+    console.log(otp);
+    console.log(otpform);
+    if (otp == otpform) {
+      console.log("merge")
+      addUser();
+
+    }
+    else
+      alert('otp incorrect');
+  }
+
+  const handlechangeotp = (event) => {
+    setotpform(event.target.value);
+
+  }
   const handleconfirmpasswordChange = (e) => {
     setconfirmpassword(e.target.value)
   }
@@ -157,77 +194,102 @@ const SignUpForm = () => {
     // setValues({ ...values, [event.target.name]: event.target.value });
   };
 
+
+
+
   return (
-    <SignUpContainer>
-      {loading?<div>loading.......</div>:
-      <>
-      <h2>Don't have an account?</h2>
-      <span>Sign up with your email and password</span>
-      <form onSubmit={handleSubmit}>
+    <div>
+      {
+        tabIndex === 1 && (
+          <SignUpContainer>
+            {loading ? <div>loading.......</div> :
+              <>
+                <h2>Don't have an account?</h2>
+                <span>Sign up with your email and password</span>
+                <form onSubmit={handleSubmit}>
 
-        {inputs.map((input) => (
-          <FormInput
-            key={input.id}
-            {...input}
-            value={formFields[input.name]}
+                  {inputs.map((input) => (
+                    <FormInput
+                      key={input.id}
+                      {...input}
+                      value={formFields[input.name]}
+                      onChange={handleChange}
+                    />
+
+                  ))}
+
+                  {/* <FormInput
+            label='Display Name'
+            type='text'
+            required
             onChange={handleChange}
+            name='username'
+            value={username}
           />
+  
+          <FormInput
+            label='Email'
+            type='email'
+            required
+            onChange={handleChange}
+            name='email'
+            value={email}
+          />
+  
+          <FormInput
+            label='Password'
+            type='password'
+            required
+            onChange={handleChange}
+            name='password'
+            value={password}
+          />
+  
+          <FormInput
+            label='Confirm Password'
+            type='password'
+            required
+            onChange={handleconfirmpasswordChange}
+            name='confirmPassword'
+            value={confirmPassword}
+          /> */}
+                  <FormInput
+                    label='Confirm Password'
+                    type='password'
+                    placeholder="Confirm Password"
+                    required
+                    onChange={handleconfirmpasswordChange}
+                    name='confirmpassword'
+                    value={confirmpassword}
+                  />
+                  <Button type='submit' loading={loading}>Sign Up</Button>
+                </form>
+                <li ><i class="fa fa-external-link"></i><Link className='navLink' to="/chat">chat</Link></li></>}
+          </SignUpContainer>
+        )
+      }
 
-        ))}
+      {
+        tabIndex === 2 && (
+          <div>
+            <p>hello</p>
+            <form onSubmit={handlesubmitotp}>
+              <input type="number" name="otp" placeholder="Enter otp" value={otpform} onChange={handlechangeotp} />
+              <br />
+              <button type="submit">Enter</button>
+            </form>
 
-        {/* <FormInput
-          label='Display Name'
-          type='text'
-          required
-          onChange={handleChange}
-          name='username'
-          value={username}
-        />
+          </div>
+        )
+      }
 
-        <FormInput
-          label='Email'
-          type='email'
-          required
-          onChange={handleChange}
-          name='email'
-          value={email}
-        />
+    </div>
 
-        <FormInput
-          label='Password'
-          type='password'
-          required
-          onChange={handleChange}
-          name='password'
-          value={password}
-        />
-
-        <FormInput
-          label='Confirm Password'
-          type='password'
-          required
-          onChange={handleconfirmpasswordChange}
-          name='confirmPassword'
-          value={confirmPassword}
-        /> */}
-        <FormInput
-          label='Confirm Password'
-          type='password'
-          placeholder="Confirm Password"
-          required
-          onChange={handleconfirmpasswordChange}
-          name='confirmpassword'
-          value={confirmpassword}
-        />
-        <Button type='submit' loading={loading}>Sign Up</Button>
-      </form>
-      <li ><i class="fa fa-external-link"></i><Link className='navLink' to="/chat">chat</Link></li></>}
-    </SignUpContainer>
   );
 };
 
 
-const REGISTER_USER=gql`
+const REGISTER_USER = gql`
   mutation Register( 
     $registerInput: RegisterInput
   ) {
