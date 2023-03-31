@@ -1,6 +1,6 @@
 
 import "./App.css";
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, Outlet } from "react-router-dom";
 
 
@@ -34,6 +34,9 @@ function App() {
   console.log(user)
   const dispatch = useDispatch()
   const { login, logout } = bindActionCreators(actioncreators, dispatch)
+
+  
+  
   return (
     <>
       <PropState>

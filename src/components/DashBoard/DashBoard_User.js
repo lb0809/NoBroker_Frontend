@@ -1,4 +1,5 @@
 import React from 'react';
+import { gql, useQuery } from '@apollo/client';
 import { useState } from "react";
 import "./DashBoard.css";
 
@@ -13,8 +14,11 @@ import { actioncreators } from '../../state/actioncreators'
 import profile from "../../images/profile.png"
 import { useSelector,useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const DashBoard_User = () => {
+    const [res, setres] = useState(null)
+    const [is, setis] = useState(0)
     const navigate = useNavigate();
     const user=useSelector(state=>state.user)
     const [user_new, setuser_new] = useState(user.user)
@@ -23,6 +27,26 @@ const DashBoard_User = () => {
     console.log(username)
     const dispatch = useDispatch()
     const { login,logout } = bindActionCreators(actioncreators, dispatch)
+    let { loading, error, data } = useQuery(GET_PROPERTY, {
+        skip: is
+      })
+    
+      if (data) {
+        data = data.getProperties
+        let data_new=data.filter(e=>{return e.owner_email===email})
+        setres(data_new)
+        setis(1)
+        console.log(res)
+      }
+      const filterop=()=>{
+        let data_new=data.filter(e=>{return e.owner_email===email})
+        setres(data_new)
+      }
+      useEffect(() => {
+        if(data)
+            filterop()
+        // eslint-disable-next-line
+      }, [ res])
 
 
     const [tabIndex, setTabIndex] = useState(1);
@@ -77,12 +101,11 @@ const DashBoard_User = () => {
             {
                 tabIndex === 2 && (
                     <div>
-                        <Posted_property_card></Posted_property_card>
-                        <Posted_property_card></Posted_property_card>
-                        <Posted_property_card></Posted_property_card>
-                        <Posted_property_card></Posted_property_card>
-                        <Posted_property_card></Posted_property_card>
-                        <Posted_property_card></Posted_property_card>
+                        {res&&res.map((x,key)=>{
+                            return(
+                                <Posted_property_card key={key} data={x}/>
+                            )
+                        })}
 
                     </div>
                 )
@@ -94,5 +117,47 @@ const DashBoard_User = () => {
         </div>
     </div>
 }
+const GET_PROPERTY = gql`
+  query GetProperties {
+    getProperties {
+      age
+      address {
+        apartment_society
+        locality
+        city
+        houseno
+        floorno
+        sublocality
+      }
+      category
+      createdAt
+      description
+      dimensions {
+        area {
+          value
+          unit
+        }
+        bedrooms
+        bathrooms
+        balconies
+      }
+      id
+      imgname
+      location {
+        longitude
+        latitude
+      }
+      owner_email
+      owner_name
+      price {
+        value
+        currency
+      }
+      purpose
+      title
+    }
+  }
+
+`
 
 export default DashBoard_User;

@@ -72,6 +72,7 @@ const SignInForm = () => {
     update(_,result){
       console.log(result)
       login(result.data.login)
+      navigate('/DashBoard')
     },
     onError(err){
       console.log(err)
