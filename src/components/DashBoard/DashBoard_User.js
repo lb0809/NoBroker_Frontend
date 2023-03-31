@@ -6,7 +6,7 @@ import DashboardNavbar from "./DashboardNavbar";
 import EditProfile from "./EditProfile";
 import EditProperty_modal from "./EditProperty_modal";
 import Posted_property_card from './Posted_property_card';
-
+import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';
 import { actioncreators } from '../../state/actioncreators'
 
@@ -59,10 +59,10 @@ const DashBoard_User = () => {
                         Logout
                     </button>
                     <button className='logout_button'>
-                        <span class="material-symbols-outlined logout_icon">
-                            switch_account
-                        </span>
-                        Switch Account</button>
+                        
+                        <li ><i class="fa fa-external-link"></i><Link className='' style={{"color" : "white"}} to="/chat">chat</Link></li>
+                        
+                        </button>
                 </div>
             </div>
         </div>
