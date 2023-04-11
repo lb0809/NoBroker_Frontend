@@ -17,7 +17,7 @@ import Search from "./components/Search/Search";
 import AboutUs from "./components/aboutus/aboutus";
 import Contact from "./components/contact/contact";
 import Chat from "./components/chat/Chat";
-import ChatInterface from "./components/chat/chat-interface";
+import ChatInterface from "./components/chat/ChatInterface";
 import DashBoard from "./components/DashBoard/DashBoard_User";
 import Dash from "./routes/dashboard/Dash"
 import Users from "./components/users/users";

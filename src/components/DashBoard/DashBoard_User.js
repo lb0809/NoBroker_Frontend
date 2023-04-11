@@ -15,6 +15,7 @@ import profile from "../../images/profile.png"
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import ChatInterface from '../chat/ChatInterface';
 
 const DashBoard_User = () => {
     const [res, setres] = useState(null)
@@ -73,6 +74,11 @@ const DashBoard_User = () => {
                             apartment
                         </span>
                         Posted Property</button>
+                    <button className='sidebar_button' onClick={() => setTabIndex(3)}>
+                        <span class="material-symbols-outlined sidebar_icon">
+                            apartment
+                        </span>
+                        Chat</button>
 
                 </div>
                 <div className="logout_container">
@@ -107,6 +113,13 @@ const DashBoard_User = () => {
                             )
                         })}
 
+                    </div>
+                )
+            }
+            {
+                tabIndex === 3 && (
+                    <div style={{marginTop:"20vh",marginLeft:"12vw"}}>
+                    <ChatInterface/>
                     </div>
                 )
             }
