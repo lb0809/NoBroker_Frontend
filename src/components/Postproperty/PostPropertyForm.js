@@ -196,13 +196,13 @@ const PostPropertyForm = () => {
         const val = e.target.files[0]
         let formData = new FormData()
         formData.append('file', val)
-        const res = await (await fetch('http://localhost:5000/uploadImage', {
+        const res = await (await fetch('https://nobroker-server.onrender.com/uploadImage', {
             method: 'POST',
             body: formData,
         })).json()
         console.log(res)
         if (res) {
-            setfields({ ...fields, imgname: 'http://localhost:5000/' + res.filename, isimg: 1, image: URL.createObjectURL(e.target.files[0]) })
+            setfields({ ...fields, imgname: 'https://nobroker-server.onrender.com/' + res.filename, isimg: 1, image: URL.createObjectURL(e.target.files[0]) })
         }
     }
 
