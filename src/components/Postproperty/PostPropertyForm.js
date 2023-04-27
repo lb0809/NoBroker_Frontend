@@ -36,7 +36,7 @@ const PostPropertyForm = () => {
     const { prop, setProp } = context
     //
     // const backend_clear=async()=>{
-    //     const resp = await fetch('http://localhost:5000/clear', {
+    //     const resp = await fetch(process.env.REACT_APP_BACKEND_URL+'/clear', {
     //     method: 'GET',
     //     headers: {
     //       'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ const PostPropertyForm = () => {
     // const backend_fun=async()=>{
 
 
-    //   const response = await fetch('http://localhost:5000/adduser', {
+    //   const response = await fetch(process.env.REACT_APP_BACKEND_URL+'/adduser', {
     //     method: 'POST',
     //     headers: {
     //       'Content-Type': 'application/json',
@@ -128,8 +128,8 @@ const PostPropertyForm = () => {
                 latitude: Number(fields.lat)
             },
             dimensionInput: {
-              },
-            dimensionsInput:{
+            },
+            dimensionsInput: {
                 bedrooms: Number(fields.bedrooms),
                 bathrooms: Number(fields.Bathrooms),
                 balconies: Number(fields.Balconies)
@@ -173,8 +173,8 @@ const PostPropertyForm = () => {
         console.log(" here")
         console.log(fields)
         addProperty()
-        
-        
+
+
 
         // console.log(login_id)
         // backend_clear()
@@ -184,7 +184,7 @@ const PostPropertyForm = () => {
         // postprop(fields,login_id)
         // setProp(prop.concat(fields))
         // console.log(prop)
-        
+
     }
     const handleChange = (e) => {
         const name = e.target.name

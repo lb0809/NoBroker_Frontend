@@ -124,14 +124,14 @@ const SignUpForm = () => {
 
       //   setusersstate(usersstate.concat(formFields))
       //   console.log(usersstate)
-      //   const resp = await fetch('http://localhost:5000/clear', {
+      //   const resp = await fetch(process.env.REACT_APP_BACKEND_URL+'/clear', {
       //     method: 'GET',
       //     headers: {
       //       'Content-Type': 'application/json',
       //     },
       //   });
 
-      //   const response = await fetch('http://localhost:5000/adduser', {
+      //   const response = await fetch(process.env.REACT_APP_BACKEND_URL+'/adduser', {
       //     method: 'POST',
       //     headers: {
       //       'Content-Type': 'application/json',
@@ -141,7 +141,7 @@ const SignUpForm = () => {
 
       setTabIndex(2);
       console.log(formFields)
-      const res = await (await fetch('http://localhost:5000/auth', {
+      const res = await (await fetch(process.env.REACT_APP_BACKEND_URL + '/auth', {
         headers: {
           'Accept': 'Application/json',
           'content-Type': 'application/json'

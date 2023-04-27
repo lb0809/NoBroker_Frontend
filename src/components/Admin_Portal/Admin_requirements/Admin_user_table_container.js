@@ -5,7 +5,7 @@ const AdminUserTableContainer = () => {
     const [userdata, userdatachange] = useState(null);
 
     // const fetchdata = async () => {
-    //     const url = `http://localhost:5000/fetchall`;
+    //     const url = `${process.env.REACT_APP_BACKEND_URL}/fetchall`;
 
     //     let resp = await fetch(url);
     //     let r = await resp.json()
@@ -14,7 +14,7 @@ const AdminUserTableContainer = () => {
     // }
 
     useEffect(() => {
-        fetch("http://localhost:5000/fetchall").then((res) => {
+        fetch(process.env.REACT_APP_BACKEND_URL + "/fetchall").then((res) => {
             console.log(res);
             return res.json();
         }).then((resp) => {
