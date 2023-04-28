@@ -196,13 +196,15 @@ const PostPropertyForm = () => {
         const val = e.target.files[0]
         let formData = new FormData()
         formData.append('file', val)
-        const res = await (await fetch('https://nobroker-server.onrender.com/uploadImage', {
+        const res = await (await fetch(`${process.env.REACT_APP_BACKEND_URL}/uploadImage`, {
             method: 'POST',
             body: formData,
         })).json()
         console.log(res)
         if (res) {
-            setfields({ ...fields, imgname: 'https://nobroker-server.onrender.com/' + res.filename, isimg: 1, image: URL.createObjectURL(e.target.files[0]) })
+            console.log(`{process.env.REACT_APP_BACKEND_URL}/`+res.filename)
+            console.log(`{process.env.REACT_APP_BACKEND_URL}/` + res.filename)
+            setfields({ ...fields, imgname: res.filename, isimg: 1, image: URL.createObjectURL(e.target.files[0]) })
         }
     }
 

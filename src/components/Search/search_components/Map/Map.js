@@ -7,6 +7,7 @@ import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import L from 'leaflet';
 import LocationCard from './LocationCard/LocationCard ';
+import { duration } from '@mui/material';
 let DefaultIcon = L.icon({
     iconUrl: "https://cdn-icons-png.flaticon.com/512/3394/3394645.png",
     iconSize: new L.Point(25, 35)
@@ -25,7 +26,10 @@ const Map = (props) => {
     const map = useMap();
   
     useEffect(() => {
-      map.flyTo(props2.center, props2.zoom);
+      map.flyTo(props2.center, props2.zoom,{
+        animate:true,
+        duration:0.5
+      });
     });
   
     return null;
@@ -49,7 +53,19 @@ const Map = (props) => {
         
       </Popup>
       </div>
-    </Marker>}
+    </Marker>
+    }
+    <Marker position={[lat+0.1,lng]}>
+      <div className="" style={{"width":"30px"}}>
+      <Popup >
+        
+      
+      
+        <LocationCard data={data}/>
+        
+      </Popup>
+      </div>
+    </Marker>
     <FlyMapTo center={[lat,lng]} zoom={13} />
   </MapContainer>
     </>

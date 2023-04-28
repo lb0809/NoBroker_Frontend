@@ -6,7 +6,7 @@ const LocationCard = (props) => {
     return (
         <div id="cardHover">
             <div className="location-card-div">
-                <img className="location-card-img" src={image} alt="" id="imageProfile"/>
+                <img className="location-card-img" src={`${process.env.REACT_APP_BACKEND_URL}/` +image} alt="" id="imageProfile"/>
                     <span>
                         <div id="userNameCard">{property_title}</div>
                         <div className="containBox">

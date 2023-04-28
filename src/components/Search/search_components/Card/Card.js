@@ -23,7 +23,7 @@ const Card = (props) => {
                 <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
             </div> */}
             <div className="" style={{"width":"100%","height":"38vh"}} >
-              <img className="" style={{"width":"100%","height":"100%"}} src={imgname} alt="" />
+              <img className="" style={{"width":"100%","height":"100%"}} src={`${process.env.REACT_APP_BACKEND_URL}/` +imgname} alt="" />
             </div>
             <div className="property-details row" >
                     <div className='container col-8 pt-2'>

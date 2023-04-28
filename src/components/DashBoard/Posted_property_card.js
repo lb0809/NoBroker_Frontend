@@ -7,7 +7,7 @@ const Posted_property_card = (props) => {
     const{data} = props
     return (
         <div className="postedporpertycard_container">
-            <img src={data.imgname} alt="" className="posted_property_card_img" />
+            <img src={`${process.env.REACT_APP_BACKEND_URL}/` +data.imgname} alt="" className="posted_property_card_img" />
             <div className="pp_card_content">
 
 
