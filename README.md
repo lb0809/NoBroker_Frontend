@@ -8,8 +8,8 @@
 
 
 Site Deployed
-https://no-broker-eeut.onrender.com  --f
-https://no-broker-api.onrender.com   --b
+https://lambent-palmier-fb31b8.netlify.app/  --f         
+https://no-broker-api.onrender.com   --b             
 
 1. Download and Unzip the uploaded material
 To run frontend open terminal
@@ -20,5 +20,5 @@ To run frontend open terminal
 To run backend open another terminal
 1. cd NoBroker_backend
 2. npm install
-3. nodemon app
+3. nodemon app.cjs
 
