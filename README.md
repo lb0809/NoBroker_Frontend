@@ -11,7 +11,7 @@ Site Deployed
 https://lambent-palmier-fb31b8.netlify.app/  --f         
 https://no-broker-api.onrender.com   --b     
        
-  Details    
+       Details    
 Created a CRUD website to provide solution to real estate brokerage problem.       
 Used MERN stack with Graphql for backend api.       
 Users can post the property they want to sell or rent.      
