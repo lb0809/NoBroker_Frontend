@@ -7,7 +7,7 @@
 
 
 
-Site Deployed
+       Site Deployed
 https://lambent-palmier-fb31b8.netlify.app/  --f         
 https://no-broker-api.onrender.com   --b     
        
@@ -25,7 +25,7 @@ Database query optimization and Caching done.
 CI/CD pipeline and unit tests deployed.      
 Implemented DDD      
        
-  How to Run      
+       How to Run      
 1. Download and Unzip the uploaded material
 To run frontend open terminal
 1. cd NoBroker_frontend
